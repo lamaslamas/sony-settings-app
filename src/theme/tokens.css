@@ -28,7 +28,7 @@
   --on-tab: #ffffff;
 
   /* Schermo del menu della camera (riproduzione). Colori misurati su uno screenshot dello schermo reale:
-     sfondo nero, lista a sinistra #101010, pannello destro #212121, riga selezionata #b12408,
+     sfondo nero, lista a sinistra #101010, pannello destro #212121,
      Exposure/Color attivo #cf1d99. Le altre schede attive sono ricavate dalle tinte spente (da affinare). */
   --cam-bg: #000000;
   --cam-list: #101010;
@@ -36,9 +36,12 @@
   --cam-line: #2c2c2c;
   --cam-text: #ffffff;
   --cam-dim: #9a9a9a;
-  --cam-sel: #b12408;
+  /* Riga selezionata: la camera usa il rosso-arancio, ma nell'app si confonderebbe con le schede e i numeri
+     dei gruppi. Qui: sfondo grigio neutro + contorno ambra (colore d'accento dell'app, assente nel menu). */
+  --cam-sel: #ffb020;          /* contorno e valore */
+  --cam-sel-bg: #3d3d44;       /* sfondo */
   --cam-sel-text: #ffffff;
-  --cam-value: #ffffff;
+  --cam-value: #ffb020;
 
   /* Schede della camera: colore attivo e tinta spenta (non selezionata) */
   --cam-tab-mymenu: #6b6b6b;    --cam-tab-mymenu-dim: #212121;

@@ -136,7 +136,7 @@ button.cam-tab { cursor: pointer; }
 .cam-gruppi .cam-riga { justify-content: flex-start; gap: 8px; }
 .cam-voci .cam-riga { color: #d4d4d4; }
 .cam-riga.sotto { padding-left: 22px; }
-.cam-riga.sel { background: var(--cam-sel); color: var(--cam-sel-text); }
+.cam-riga.sel { background: var(--cam-sel-bg); color: var(--cam-sel-text); box-shadow: inset 0 0 0 3px var(--cam-sel); font-weight: 700; }
 .cam-riga.sel .cam-valore { color: var(--cam-value); }
 .cam-num {
   flex: none; min-width: 1.5em; height: 1.5em; display: inline-flex; align-items: center; justify-content: center;

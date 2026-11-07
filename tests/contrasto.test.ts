@@ -24,7 +24,8 @@ describe('contrasto dei colori (testo ≥ 4.5:1, icone e bordi ≥ 3:1)', () => 
     ['accento su card', '--accent', '--surface'],
     ['accento su card chiara', '--accent', '--surface-2'],
     ['testo su accento', '--on-accent', '--accent'],
-    ['testo su riga selezionata (camera)', '--cam-sel-text', '--cam-sel'],
+    ['testo su riga selezionata (camera)', '--cam-sel-text', '--cam-sel-bg'],
+    ['valore su riga selezionata (camera)', '--cam-value', '--cam-sel-bg'],
     ['testo su schermo camera', '--cam-text', '--cam-bg'],
     ['testo voci su pannello (camera)', '--cam-text', '--cam-panel'],
     ['testo attenuato su lista (camera)', '--cam-dim', '--cam-list'],
@@ -38,6 +39,10 @@ describe('contrasto dei colori (testo ≥ 4.5:1, icone e bordi ≥ 3:1)', () => 
   });
   it.each(['shooting', 'exposure', 'focus', 'playback', 'network', 'setup'])('scheda attiva della camera %s: icona e numero bianchi ≥ 3:1', (t) => {
     expect(contrasto('#ffffff', colore(`--cam-tab-${t}`))).toBeGreaterThanOrEqual(3);
+  });
+  it('il contorno della riga selezionata si distingue dal pannello (≥ 3:1)', () => {
+    expect(contrasto(colore('--cam-sel'), colore('--cam-sel-bg'))).toBeGreaterThanOrEqual(3);
+    expect(contrasto(colore('--cam-sel'), colore('--cam-panel'))).toBeGreaterThanOrEqual(3);
   });
   it('bordi visibili sullo sfondo (≥ 3:1)', () => expect(contrasto(colore('--border'), colore('--bg'))).toBeGreaterThanOrEqual(3));
 });
