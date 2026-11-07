@@ -1,7 +1,9 @@
 import { useState } from 'preact/hooks';
-import { guida, situazioni, situazioneById } from '../lib/data';
+import { situazioni, situazioneById } from '../lib/data';
+import { vociPreRipresa } from '../lib/preripresa';
 import { useStato } from '../lib/useStato';
-import { azzeraSpunte, impostaSpunta } from '../lib/storage';
+import { aggiornaEvento, azzeraSpunte, impostaSpunta } from '../lib/storage';
+import { scelteDi, suggerisciLuciArtificiali } from '../lib/useProposte';
 import { VerifyBadge } from '../components/Badges';
 import { CheckRow } from '../components/CheckRow';
 
@@ -13,20 +15,12 @@ export function PreRipresa() {
   const sit = situazioneById(sid);
   const [tipoScelto, setTipo] = useState<'video' | 'foto'>(iniziale?.tipo ?? 'video');
   const tipo = sit?.tipo ?? tipoScelto; // con una situazione scelta il tipo è quello della situazione
+  const sc = scelteDi(evento);
 
   const prefisso = `pre/${tipo}/`;
-  const comune = guida.preRipresa.comune.map((c) => ({
-    ...c,
-    // La compensazione dipende dalla situazione: con ISO fisso (interviste) non ha effetto.
-    dettaglio: sit ? sit.compensazione.nota : c.dettaglio,
-  }));
-  const specifiche = guida.preRipresa[tipo].map((v) => {
-    if (!sit?.zebre || !v.id.endsWith('zebra')) return v;
-    const alt = sit.zebre.alternative.length ? ` (alternativa ${sit.zebre.alternative.join(', ')})` : '';
-    return { ...v, dettaglio: `Zebra Level ${sit.zebre.livello}${alt}. ${v.dettaglio ?? ''}` };
-  });
-  const items = [...comune, ...specifiche] as { id: string; testo: string; dettaglio?: string; verify?: boolean; verifyNota?: string }[];
+  const items = vociPreRipresa(tipo, sit, sc);
   const fatte = items.filter((i) => evento.spunte[prefisso + i.id]).length;
+  const suggerito = suggerisciLuciArtificiali(evento);
 
   return (
     <div class="page stack">
@@ -42,6 +36,13 @@ export function PreRipresa() {
             <button aria-pressed={tipo === 'video'} onClick={() => setTipo('video')}>Video</button>
             <button aria-pressed={tipo === 'foto'} onClick={() => setTipo('foto')}>Foto</button>
           </div>
+        )}
+        {sit?.tipo === 'foto' && (
+          <label class="check" style={{ minHeight: 'var(--hit)' }}>
+            <input type="checkbox" checked={sc.luciArtificiali}
+              onChange={(e) => aggiorna((s) => aggiornaEvento(s, (ev) => ({ ...ev, scelte: { ...ev.scelte, luciArtificiali: (e.target as HTMLInputElement).checked } })))} />
+            <span class="body">Luci artificiali{evento.scelte?.luciArtificiali === undefined && suggerito ? ' (suggerito dalla foto di prova)' : ''}</span>
+          </label>
         )}
       </div>
       <div class="row">

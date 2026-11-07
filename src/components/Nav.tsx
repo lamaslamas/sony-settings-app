@@ -3,7 +3,7 @@ import { Icon } from './Icon';
 
 const ITEMS = [
   { to: '/', label: 'Home', icon: 'home', match: (p: string) => p === '/' },
-  { to: '/luce', label: 'Situazione', icon: 'light', match: (p: string) => p.startsWith('/luce') || p.startsWith('/situazione') },
+  { to: '/luce', label: 'Scena', icon: 'light', match: (p: string) => p.startsWith('/luce') || p.startsWith('/situazione') },
   { to: '/basi/video', label: 'Basi', icon: 'layers', match: (p: string) => p.startsWith('/basi') },
   { to: '/guida', label: 'Guida', icon: 'book', match: (p: string) => p.startsWith('/guida') },
   { to: '/pre-ripresa', label: 'Pre', icon: 'check', match: (p: string) => p.startsWith('/pre-ripresa') },

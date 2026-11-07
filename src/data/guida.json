@@ -165,7 +165,8 @@
       {
         "id": "v-zebra",
         "testo": "Zebre attive (Zebra Display On)",
-        "dettaglio": "Livello 70 per la pelle; 100+ per le alte luci bruciate (finestre, lampade). Niente zebre sul volto = sottoesposto; zebre su gran parte del volto = troppo."
+        "dettaglio": "Livello 70 per la pelle; 100+ per le alte luci bruciate (finestre, lampade). Niente zebre sul volto = sottoesposto; zebre su gran parte del volto = troppo.",
+        "quando": "zebre"
       },
       {
         "id": "v-fps-pp",
@@ -188,11 +189,13 @@
       {
         "id": "f-zebra",
         "testo": "Zebre per le alte luci se servono (wildlife, paesaggio, sfondi chiari)",
-        "dettaglio": "Zebra Display On con livello per le alte luci, ad esempio 100+ (da verificare). Le strisce indicano le zone che stanno per bruciarsi."
+        "dettaglio": "Zebra Display On con livello per le alte luci, ad esempio 100+ (da verificare). Le strisce indicano le zone che stanno per bruciarsi.",
+        "quando": "zebre"
       },
       {
         "id": "f-otturatore",
-        "testo": "Luci artificiali: Shutter Type Mechanical Shutter"
+        "testo": "Luci artificiali: Shutter Type su Mechanical Shutter",
+        "quando": "luciArtificiali"
       },
       {
         "id": "f-steady",
@@ -206,7 +209,8 @@
         "id": "f-rec",
         "testo": "Scheda inserita e Recording Media corretto"
       }
-    ]
+    ],
+    "nota": "Le voci con \"quando\" compaiono solo se servono: zebre = la situazione le prevede; luciArtificiali = hai indicato luci artificiali. Senza situazione scelta compaiono tutte."
   },
   "fotoDiProva": {
     "titolo": "Impostazioni fisse per la foto di prova",
