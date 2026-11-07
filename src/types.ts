@@ -142,8 +142,8 @@ export interface GuidaFile {
   passi: { id: string; titolo: string; passi: PassoGuida[] }[];
   preRipresa: {
     comune: { id: string; testo: string; dettaglio?: string; verify?: boolean; verifyNota?: string }[];
-    video: { id: string; testo: string; dettaglio?: string }[];
-    foto: { id: string; testo: string; dettaglio?: string }[];
+    video: { id: string; testo: string; dettaglio?: string; quando?: 'zebre' | 'luciArtificiali' }[];
+    foto: { id: string; testo: string; dettaglio?: string; quando?: 'zebre' | 'luciArtificiali' }[];
   };
   fotoDiProva: { titolo: string; voci: { label: string; value: string }[] };
 }
