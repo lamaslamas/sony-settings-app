@@ -41,6 +41,11 @@ export interface Proposte {
 /** Valori controllati dalle regole, ricavati dalle voci della base. */
 export function valoriDaBase(base: BaseFile): Valori {
   const v: Valori = {};
+  // Tempo e diaframma di partenza della base (es. M2: 1/200 e F2.8)
+  const tempo = /^1\/(\d+)/.exec(base.dials.tempo ?? '');
+  if (tempo) v.shutterDenominator = +tempo[1];
+  const f = /^F?(\d+(?:\.\d+)?)$/i.exec(base.dials.diaframma ?? '');
+  if (f) v.apertureF = +f[1];
   for (const e of base.entries) {
     switch (e.item) {
       case 'SteadyShot': v.steadyShot = e.value; break;

@@ -1,5 +1,5 @@
 {
-  "nota": "Ogni situazione elenca solo le DIFFERENZE rispetto alla base (video → M1, foto → M2). source: menu = voce del menu (ref → menu-fw400.json), dial = ghiera/comando sul corpo, lens = comando dell'obiettivo (controlli in obiettivi.json). dynamic = valore da proporre dalla foto di prova (fase 3); example è solo un esempio. tbd = valore non deciso nella specifica, proposto come punto di partenza. campo = tipo di valore per le regole fisse (tempo, diaframma, iso, isoMax, wb, steadyShot, afIlluminator, subjectRecog). strategia = come la foto di prova propone i valori (src/lib/proposte.ts).",
+  "nota": "Ogni situazione elenca solo le DIFFERENZE rispetto alla base (video → M1, foto → M2). source: menu = voce del menu (ref → menu-fw400.json), dial = ghiera/comando sul corpo, lens = comando dell'obiettivo (controlli in obiettivi.json). dynamic = valore da proporre dalla foto di prova (fase 3); example è solo un esempio. tbd = valore non deciso nella specifica, proposto come punto di partenza. campo = tipo di valore per le regole fisse (tempo, diaframma, iso, isoMax, wb, steadyShot, afIlluminator, subjectRecog). strategia = come la foto di prova propone i valori (src/lib/proposte.ts). La base foto M2 parte in modo M (ISO AUTO, 1/200, F2.8): le situazioni foto che servono in A (paesaggio, foto di gruppo aperto) lo indicano con un passo Mode dial.",
   "regole": [
     {
       "id": "int-tempo",
@@ -742,38 +742,6 @@
       "supporto": "mano libera",
       "diff": [
         {
-          "id": "mode",
-          "source": "dial",
-          "label": "Mode dial",
-          "value": "M"
-        },
-        {
-          "id": "iso",
-          "source": "menu",
-          "ref": {
-            "tab": "exposure",
-            "group": "Exposure",
-            "item": "ISO"
-          },
-          "value": "ISO AUTO",
-          "note": "Già nella base M2: in M serve ISO AUTO per usare la compensazione.",
-          "campo": "iso"
-        },
-        {
-          "id": "shutter",
-          "source": "dial",
-          "label": "Shutter speed",
-          "value": "1/200",
-          "campo": "tempo"
-        },
-        {
-          "id": "aperture",
-          "source": "dial",
-          "label": "Aperture (F)",
-          "value": "F2.8",
-          "campo": "diaframma"
-        },
-        {
           "id": "lens-oss",
           "source": "lens",
           "control": "oss",
@@ -781,7 +749,8 @@
         }
       ],
       "note": [
-        "Esposizione: M con ISO AUTO; correggi con la ghiera di compensazione."
+        "Identica alla base M2 (Mode dial M, ISO AUTO, 1/200, F2.8): cambia solo l'obiettivo.",
+        "Esposizione: correggi con la ghiera di compensazione."
       ],
       "avvisi": [
         "Luci artificiali: Shutter Type Mechanical Shutter (già nella base M2)."
@@ -803,6 +772,13 @@
       ],
       "supporto": "mano libera",
       "diff": [
+        {
+          "id": "mode",
+          "source": "dial",
+          "label": "Mode dial",
+          "value": "A",
+          "note": "La base M2 parte in M: qui serve la priorità di diaframma (tempo automatico, ISO AUTO)."
+        },
         {
           "id": "aperture",
           "source": "dial",
@@ -844,24 +820,6 @@
       "supporto": "mano libera",
       "diff": [
         {
-          "id": "mode",
-          "source": "dial",
-          "label": "Mode dial",
-          "value": "M"
-        },
-        {
-          "id": "iso",
-          "source": "menu",
-          "ref": {
-            "tab": "exposure",
-            "group": "Exposure",
-            "item": "ISO"
-          },
-          "value": "ISO AUTO",
-          "note": "Già nella base M2: in M serve ISO AUTO per usare la compensazione.",
-          "campo": "iso"
-        },
-        {
           "id": "shutter",
           "source": "dial",
           "label": "Shutter speed",
@@ -887,7 +845,8 @@
         }
       ],
       "note": [
-        "Esposizione: M con ISO AUTO; correggi con la ghiera di compensazione."
+        "Parti dalla base M2 (M, ISO AUTO): cambiano tempo e diaframma.",
+        "Esposizione: correggi con la ghiera di compensazione."
       ],
       "avvisi": [
         "Luci artificiali: Shutter Type Mechanical Shutter (già nella base M2)."
@@ -909,12 +868,6 @@
       ],
       "supporto": "mano libera",
       "diff": [
-        {
-          "id": "mode",
-          "source": "dial",
-          "label": "Mode dial",
-          "value": "M"
-        },
         {
           "id": "iso",
           "source": "menu",
@@ -1070,6 +1023,13 @@
       ],
       "supporto": "mano libera",
       "diff": [
+        {
+          "id": "mode",
+          "source": "dial",
+          "label": "Mode dial",
+          "value": "A",
+          "note": "La base M2 parte in M: qui serve la priorità di diaframma (tempo automatico, ISO AUTO)."
+        },
         {
           "id": "aperture",
           "source": "dial",

@@ -33,7 +33,7 @@ export interface BaseFile {
   id: 'M1' | 'M2';
   titolo: string;
   descrizione: string;
-  dials: { stillMovieSq: string; mode: string };
+  dials: { stillMovieSq: string; mode: string; /** Tempo e diaframma di partenza (registrati nella memoria). */ tempo?: string; diaframma?: string };
   salvataggio: { dove: string; menu: MenuRef; valore: string };
   entries: BaseEntry[];
   /** Voci di Setup: non vengono salvate nella memoria, si fanno una volta sola. */

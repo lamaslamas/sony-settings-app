@@ -41,6 +41,8 @@ export function Base({ tipo }: { tipo: 'video' | 'foto' }) {
       <div class="card">
         <div><span class="name">Still/Movie/S&amp;Q dial</span> → <span class="value">{base.dials.stillMovieSq}</span></div>
         <div><span class="name">Mode dial</span> → <span class="value">{base.dials.mode}</span></div>
+        {base.dials.tempo && <div><span class="name">Shutter speed</span> → <span class="value">{base.dials.tempo}</span> <span class="small dim">(di partenza)</span></div>}
+        {base.dials.diaframma && <div><span class="name">Aperture</span> → <span class="value">{base.dials.diaframma}</span> <span class="small dim">(di partenza)</span></div>}
       </div>
 
       {grouped.map(({ tab, groups }) => (
@@ -70,7 +72,7 @@ export function Base({ tipo }: { tipo: 'video' | 'foto' }) {
 
       <div class="card accent stack">
         <h2 style={{ marginTop: 0 }}>Salvala sulla scheda</h2>
-        <p>Imposta Still/Movie/S&amp;Q su <b>{base.dials.stillMovieSq}</b> e la ghiera dei modi su <b>{base.dials.mode}</b>, poi:</p>
+        <p>Imposta Still/Movie/S&amp;Q su <b>{base.dials.stillMovieSq}</b> e la ghiera dei modi su <b>{base.dials.mode}</b>{base.dials.tempo ? <>, tempo <b>{base.dials.tempo}</b> e diaframma <b>{base.dials.diaframma}</b></> : null}, poi:</p>
         <div><span class="name">{base.salvataggio.menu.item}</span> → <span class="value">{base.salvataggio.valore}</span> {!findMenuItem(base.salvataggio.menu) && <b>?</b>}</div>
         <MenuPath r={base.salvataggio.menu} />
         <Callout title="Punto dove è più facile sbagliare" strong>
