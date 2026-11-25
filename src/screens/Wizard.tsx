@@ -110,9 +110,9 @@ export function Wizard({ id }: { id: string }) {
           {s.avvisi.map((a) => <Callout key={a} title="Attenzione" strong>{a}</Callout>)}
           <div class="card stack">
             <h2 style={{ margin: 0 }}>1. Richiama la {base.titolo}</h2>
-            <p style={{ margin: 0 }}>Still/Movie/S&amp;Q su <b>{base.dials.stillMovieSq}</b>, ghiera dei modi su 1/2/3, poi:</p>
+            <p style={{ margin: 0 }}>Still/Movie/S&amp;Q su <b>{base.dials.stillMovieSq}</b>, ghiera dei modi su <b>1</b>, poi:</p>
             <CameraMenu r={{ tab: 'shooting', group: 'Shooting Mode', item: 'Recall Camera Setting' }} valore={base.id} />
-            <Callout title="Slot della scheda" strong>Se M1/M2 non compaiono, controlla Memory/Recall Media (Slot 1 / Slot 2).</Callout>
+            <Callout title="Il richiamo funziona solo con la ghiera su 1, 2 o 3" strong>Con la ghiera su M, P, A o S la camera dice “This function is currently disabled”. Se M1/M2 non compaiono, controlla Memory/Recall Media (Slot 1).</Callout>
           </div>
           <div class="card stack">
             <label for="lens"><b>2. Obiettivo montato</b></label>

@@ -56,7 +56,7 @@ export function BaseWizard({ base }: { base: BaseFile }) {
             <h2 style={{ margin: 0 }}>Prima di cominciare</h2>
             <p style={{ margin: 0 }}>Still/Movie/S&amp;Q dial su <b class="value">{base.dials.stillMovieSq}</b>, ghiera dei modi su <b class="value">{base.dials.mode}</b>.{base.dials.tempo && <> Tempo <b class="value">{base.dials.tempo}</b>, diaframma <b class="value">{base.dials.diaframma}</b>.</>}</p>
           </div>
-          <Callout title="Slot della scheda" strong>Per salvare su M1–M4 la scheda deve essere inserita e lo slot scelto con Memory/Recall Media (Slot 1 / Slot 2).</Callout>
+          <Callout title="Slot della scheda" strong>Per salvare su M1–M4 la scheda deve essere inserita e lo slot scelto con Memory/Recall Media (Slot 1).</Callout>
           <p class="dim">{operativi.length} passi, in ordine di menu. Le voci di Setup alla fine non vengono salvate nella memoria.</p>
         </div>
       )}

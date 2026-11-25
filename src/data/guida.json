@@ -11,16 +11,22 @@
       "testo": "Se cambi qualcosa su una posizione e poi giri la ghiera e torni, la modifica sparisce. Per tenerla devi risalvarla su quella posizione con Camera Set. Memory."
     },
     {
+      "id": "due-memorie",
+      "titolo": "Ogni posizione ha due memorie: Still e Movie",
+      "evidenzia": true,
+      "testo": "Le posizioni 1, 2, 3 della ghiera dei modi hanno ciascuna due memorie separate, una per Still e una per Movie. Per l'evento usi solo la posizione 1: Movie + 1 è il video dell'evento, Still + 1 è la foto dell'evento. Durante l'evento la ghiera resta su 1 e cambi solo la manopola Still/Movie/S&Q. Le posizioni 2 e 3 e M3–M4 restano libere."
+    },
+    {
       "id": "scheda-camera",
       "titolo": "Camera o scheda: scegli il numero",
       "evidenzia": true,
-      "testo": "In Camera Set. Memory scegli direttamente dove salvare: 1, 2, 3 salvano nella camera (una serie per ciascuna posizione dello Still/Movie/S&Q dial), M1–M4 salvano sulla scheda di memoria. Lo slot della scheda usato per M1–M4 si sceglie con Memory/Recall Media (Slot 1 o Slot 2): controllalo prima di salvare o richiamare M1/M2."
+      "testo": "In Camera Set. Memory scegli direttamente dove salvare: 1, 2, 3 salvano nella camera (nella memoria Still o Movie, secondo la manopola Still/Movie/S&Q), M1–M4 salvano sulla scheda di memoria. Lo slot della scheda usato per M1–M4 si sceglie con Memory/Recall Media (Slot 1 o Slot 2): controlla che sia Slot 1, quello della scheda con le basi."
     },
     {
       "id": "richiamo",
-      "titolo": "Come si richiama",
-      "evidenzia": false,
-      "testo": "Per 1, 2, 3 basta girare la ghiera dei modi su quella posizione. Per M1–M4 imposta la ghiera su 1/2/3 (posizione Recall Camera Setting) e scegli il numero in MENU › Shooting › Shooting Mode › Recall Camera Setting. Imposta prima Still/Movie/S&Q, poi richiama: se regoli dopo il richiamo vale quello che hai regolato."
+      "titolo": "Il richiamo funziona solo con la ghiera su 1, 2 o 3",
+      "evidenzia": true,
+      "testo": "Per richiamare M1–M4 imposta prima Still/Movie/S&Q, poi la ghiera dei modi su 1 (o 2, 3), poi scegli il numero in MENU › Shooting › Shooting Mode › Recall Camera Setting. Con la ghiera su M, P, A o S la camera risponde “This function is currently disabled”. Per 1, 2, 3 basta girare la ghiera. Se regoli dopo il richiamo vale quello che hai regolato."
     }
   ],
   "passi": [
@@ -29,13 +35,13 @@
       "titolo": "Passo A · A casa, una volta sola",
       "passi": [
         {
-          "testo": "Controlla lo slot della scheda con le basi.",
+          "testo": "Controlla che lo slot della scheda sia quello con le basi.",
           "menu": {
             "tab": "shooting",
             "group": "Shooting Mode",
             "item": "Memory/Recall Media"
           },
-          "valore": "Slot con la scheda delle basi"
+          "valore": "Slot 1"
         },
         {
           "testo": "Metti Still/Movie/S&Q su Movie e la ghiera dei modi su M. Applica tutta la Base video.",
@@ -76,20 +82,24 @@
     },
     {
       "id": "B",
-      "titolo": "Passo B · All'inizio dell'evento",
+      "titolo": "Passo B · All'inizio dell'evento (ghiera dei modi su 1)",
       "passi": [
         {
-          "testo": "Controlla lo slot della scheda con le basi.",
+          "testo": "Controlla che lo slot della scheda sia quello con le basi.",
           "menu": {
             "tab": "shooting",
             "group": "Shooting Mode",
             "item": "Memory/Recall Media"
           },
-          "valore": "Slot con la scheda delle basi",
-          "avviso": "Se lo slot è sbagliato, M1/M2 non si trovano o si salvano sulla scheda sbagliata."
+          "valore": "Slot 1",
+          "avviso": "Se lo slot è sbagliato, M1/M2 non si trovano."
         },
         {
-          "testo": "Video: Still/Movie/S&Q su Movie, ghiera dei modi su 1. Richiama la base.",
+          "testo": "Video: metti Still/Movie/S&Q su Movie e la ghiera dei modi su 1.",
+          "avviso": "La ghiera dei modi deve essere su 1, 2 o 3: altrimenti la camera dice “This function is currently disabled”."
+        },
+        {
+          "testo": "Richiama la base video.",
           "menu": {
             "tab": "shooting",
             "group": "Shooting Mode",
@@ -102,11 +112,11 @@
           "link": "/"
         },
         {
-          "testo": "Regola per la sala seguendo la checklist della situazione.",
+          "testo": "Regola per la sala seguendo la situazione video.",
           "link": "/luce"
         },
         {
-          "testo": "Salva per l'evento nella camera.",
+          "testo": "Salva per l'evento nella memoria Movie della posizione 1.",
           "menu": {
             "tab": "shooting",
             "group": "Shooting Mode",
@@ -115,7 +125,11 @@
           "valore": "1"
         },
         {
-          "testo": "Foto: Still/Movie/S&Q su Still, ghiera dei modi su 2. Richiama la base.",
+          "testo": "Foto: metti Still/Movie/S&Q su Still. La ghiera dei modi resta su 1.",
+          "avviso": "La ghiera dei modi deve essere su 1, 2 o 3: altrimenti la camera dice “This function is currently disabled”."
+        },
+        {
+          "testo": "Richiama la base foto.",
           "menu": {
             "tab": "shooting",
             "group": "Shooting Mode",
@@ -124,13 +138,17 @@
           "valore": "M2"
         },
         {
-          "testo": "Ritocca per la sala e salva nella camera.",
+          "testo": "Ritocca per la sala seguendo la situazione foto.",
+          "link": "/luce"
+        },
+        {
+          "testo": "Salva per l'evento nella memoria Still della posizione 1.",
           "menu": {
             "tab": "shooting",
             "group": "Shooting Mode",
             "item": "Camera Set. Memory"
           },
-          "valore": "2"
+          "valore": "1"
         }
       ]
     },
@@ -139,10 +157,10 @@
       "titolo": "Passo C · Durante l'evento",
       "passi": [
         {
-          "testo": "Video: Still/Movie/S&Q su Movie e ghiera dei modi su 1."
+          "testo": "Tieni la ghiera dei modi su 1 per tutto l'evento."
         },
         {
-          "testo": "Foto: Still/Movie/S&Q su Still e ghiera dei modi su 2."
+          "testo": "Video: Still/Movie/S&Q su Movie. Foto: Still/Movie/S&Q su Still. Cambi solo questa manopola."
         },
         {
           "testo": "Prima di ogni ripresa passa dalla Pre-ripresa.",

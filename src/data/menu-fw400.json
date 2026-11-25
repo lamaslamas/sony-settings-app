@@ -269,7 +269,7 @@
                 "M3",
                 "M4"
               ],
-              "note": "Richiama una memoria (1–3 dalla camera, M1–M4 dalla scheda)."
+              "note": "Richiama una memoria (1–3 dalla camera, M1–M4 dalla scheda). Funziona solo con la ghiera dei modi su 1, 2 o 3: altrimenti “This function is currently disabled”."
             },
             {
               "name": "Camera Set. Memory",
@@ -282,7 +282,7 @@
                 "M3",
                 "M4"
               ],
-              "note": "Registra le impostazioni. 1–3 nella camera, M1–M4 sulla scheda."
+              "note": "Registra le impostazioni. 1–3 nella camera (ogni posizione ha due memorie: Still e Movie), M1–M4 sulla scheda."
             },
             {
               "name": "Memory/Recall Media",
@@ -290,7 +290,7 @@
                 "Slot 1",
                 "Slot 2"
               ],
-              "note": "Slot della scheda usato per M1–M4."
+              "note": "Slot della scheda usato per M1–M4 (Slot 1 / Slot 2; di norma Slot 1)."
             },
             {
               "name": "Reg. Custom Shoot Set"
