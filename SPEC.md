@@ -47,14 +47,14 @@ Ogni situazione = elenco di differenze rispetto alla base giusta (video → M1, 
 
 Decisioni sui valori:
 - **B-roll (chiuso e aperto)**, a mano libera: `SteadyShot` On (la base M1 lo ha Off per il cavalletto), obiettivo AF e OSS on; ISO AUTO consentito, tempo 1/50 o 1/100, diaframma fisso, compensazione + zebre.
-- **Conferenza con persone**: Mode dial M, 1/200, F2.8, ISO AUTO (compensazione attiva).
-- **Foto di gruppo aperto**: diaframma F5.6–F8.
-- **Foto di gruppo chiuso**: Mode dial M, 1/125, F4–F5.6 (F5.6 con più file), ISO AUTO (compensazione attiva).
+- **Conferenza con persone**: identica alla base M2 (Mode dial M, 1/200, F2.8, ISO AUTO, compensazione attiva): cambia solo l'obiettivo.
+- **Foto di gruppo aperto**: Mode dial A (la base M2 parte in M), diaframma F5.6–F8.
+- **Foto di gruppo chiuso**: dalla base M2 (M, ISO AUTO) cambiano tempo 1/125 e diaframma F4–F5.6 (F5.6 con più file); compensazione attiva.
 
 Esempi già decisi:
 - **Intervista chiuso**: `White Balance` → `Custom 1` misurato su cartoncino grigio; ISO e Aperture in base alla foto di prova (es. ISO 3200, F2.8); Shutter 1/50 (alternativa 1/100 con luci artificiali); `Audio Rec Level` manuale, picchi ~−12 dB; obiettivo: AF, OSS off; avviso neon/sfarfallio; registra il cartoncino grigio a inizio ripresa.
-- **Wildlife**: Mode dial M con ISO AUTO; `ISO Range Limit` massimo 6400; 1/1000 (volo 1/2000–1/3200); diaframma tutta apertura; zebre attive per le alte luci con il metodo "zebre + compensazione" (vedi sezione dedicata); `Drive Mode` → `Cont. Shooting: Hi`; `Focus Area` → `Tracking: Zone`; `Recognition Target` → `Animal/Bird`; `AF Illuminator` → `Off`; obiettivo: limitatore lontano, OSS on (Mode 2 per il volo, se presente).
-- **Paesaggio**: F8 (F5.6 con poca luce); `Focus Mode` → `Single-shot AF`; `Focus Area` → `Spot: M`; `Subject Recog in AF` → `Off`; `Drive Mode` → `Single Shooting` (con forti contrasti `Cont. Bracket`); OSS on.
+- **Wildlife**: Mode dial M con ISO AUTO (già nella base M2); `ISO Range Limit` massimo 6400; 1/1000 (volo 1/2000–1/3200); diaframma tutta apertura; zebre attive per le alte luci con il metodo "zebre + compensazione" (vedi sezione dedicata); `Drive Mode` → `Cont. Shooting: Hi`; `Focus Area` → `Tracking: Zone`; `Recognition Target` → `Animal/Bird`; `AF Illuminator` → `Off`; obiettivo: limitatore lontano, OSS on (Mode 2 per il volo, se presente).
+- **Paesaggio**: Mode dial A (la base M2 parte in M; priorità di diaframma, tempo automatico), F8 (F5.6 con poca luce); `Focus Mode` → `Single-shot AF`; `Focus Area` → `Spot: M`; `Subject Recog in AF` → `Off`; `Drive Mode` → `Single Shooting` (con forti contrasti `Cont. Bracket`); OSS on.
 - **Interviste/B-roll aperto senza ND**: piano B 1/100 e diaframma più chiuso, cercare l'ombra; con filtro ND variabile tenere 1/50 e regolare il filtro (l'ND è opzionale, va proposto come alternativa).
 
 ## Regole fisse
@@ -156,7 +156,9 @@ Ogni voce può avere `verify: true`; nell'interfaccia mostra un badge "da verifi
 - Focus › Subject Recognition: Subject Recog in AF `On` · Recognition Target `Human` · Right/Left Eye Select `Auto`
 - Setup (non salvate nella memoria, una volta sola): Different Set for Still/Mv (ISO, WB, Aperture, Shutter) · Monitor Brightness `Manual ±0` · NTSC/PAL Selector `PAL` (verify gruppo) · Auto Pwr OFF Temp. `High` (verify gruppo)
 
-### Base foto · M2 (Still/Movie/S&Q dial: Still · Mode dial: A)
+### Base foto · M2 (Still/Movie/S&Q dial: Still · Mode dial: M · ISO AUTO · tempo di partenza 1/200 · diaframma di partenza F2.8)
+
+Tempo e diaframma di partenza si registrano nella memoria insieme al resto (`Camera Set. Memory` salva anche apertura e tempo). `ISO AUTO Min. SS` vale solo in modo P o A (guida Sony): in M il tempo è fisso, quindi la voce resta nella base per le situazioni che passano in A.
 
 - Shooting › Image Quality/Rec: JPEG/HEIF Switch `JPEG` · File Format `RAW & JPEG` · RAW File Type `Lossless Comp (L)` (verify) · JPEG Quality `Fine` · Aspect Ratio `3:2` · Lens Compensation `Auto`
 - Shooting › Media: Recording Media `Simult. Rec.` (verify)

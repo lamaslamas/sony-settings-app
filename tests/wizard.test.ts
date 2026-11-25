@@ -7,12 +7,12 @@ const sit = (id: string) => situazioni.find((s) => s.id === id)!;
 
 describe('wizard', () => {
   it('ordina: Mode dial, obiettivo, voci di menu nell’ordine del menu, poi le altre ghiere', () => {
-    const tipi = ordinaDiff(sit('wildlife').diff).map((d) => (d.source === 'dial' && /mode/i.test(d.label!) ? 'mode' : d.source));
+    const tipi = ordinaDiff(sit('paesaggio').diff).map((d) => (d.source === 'dial' && /mode/i.test(d.label!) ? 'mode' : d.source));
     expect(tipi[0]).toBe('mode');
-    expect(tipi.slice(1, 4)).toEqual(['lens', 'lens', 'lens']);
-    const primoMenu = tipi.indexOf('menu'), ultimoMenu = tipi.lastIndexOf('menu'), primaGhiera = tipi.indexOf('dial');
-    expect(primoMenu).toBe(4);
-    expect(primaGhiera).toBeGreaterThan(ultimoMenu);
+    expect(tipi[1]).toBe('lens');
+    const ultimoMenu = tipi.lastIndexOf('menu'), primaGhiera = tipi.indexOf('dial');
+    expect(tipi.indexOf('menu')).toBe(2);
+    expect(primaGhiera).toBeGreaterThan(ultimoMenu); // la ghiera del diaframma viene dopo il menu
   });
 
   it('le voci di menu seguono scheda › gruppo › voce', () => {
